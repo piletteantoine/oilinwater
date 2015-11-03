@@ -1,0 +1,89 @@
+.lookbook .grid .pictures {
+  position:relative;
+  cursor: pointer;
+  height: auto;
+  float: left;
+  max-height: $fs*52.9;
+  overflow: hidden;
+  width: #{gs-width(d, 1, 3) + '%'};
+  margin-right: #{gs-gutter(d, false, false) + '%'};
+  margin-bottom: #{gs-gutter(d, false, false) + '%'};
+  &:nth-of-type(3n+0) {
+    margin-right: 0;
+  }
+}
+
+// .lookbook .grid .pictures.grow {
+//   width: #{gs-width(d, 1, 6) + '%'};
+//   margin-right: #{gs-gutter(d, false, false) + '%'};
+//   margin-bottom: #{gs-gutter(d, false, false) + '%'};
+//   &:nth-of-type(2n+1) {
+//     margin-right: 0;
+//   }
+// }
+
+.lookbook .grid .pictures img{
+  margin: 0 auto;
+  width: 100%;
+  @include transition(all 0.5s ease-in-out);
+}
+
+.lookbook{
+  margin-top: $fs*11.9;
+  padding: $fs*2 0 0 0;
+  @extend %GTHaptikMedium-simple;
+}
+
+.lookbook .intro{
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  margin-bottom: $fs*9;
+}
+
+.lookbook .intro span{
+  @include fontsize(7);
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  padding: 4rem 3rem;
+  background-color: white;
+  /* border: 2px solid; */
+  box-shadow: rgba(0,0,0,0.4) 10px 10px 40px;
+}
+
+.lookbook .intro img{
+  max-width: 550px;
+}
+.lookbook .intro h2{
+  @include fontsize(2.3, 5.45);
+  @include kerning(75);
+  padding-bottom: $fs*5;
+  color: $black;
+  text-align: center;
+}
+
+.pictures:after{
+  -webkit-transition: opacity 0.8s;
+  transition: opacity 0.8s;
+  opacity: 0;
+  content: '';
+  width: 100%;
+  height: $fs*20;
+  position: absolute;
+  background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+  bottom: 0;
+  left: 0;
+  z-index: 1461364564564646;
+}
+
+.lookbook .grid .pictures:hover{
+  &:after{
+    opacity: 1!important;
+  }
+  img{
+    width: 115%;
+  }
+}

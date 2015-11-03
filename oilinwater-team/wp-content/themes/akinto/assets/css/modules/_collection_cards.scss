@@ -1,0 +1,198 @@
+.card img, .card .info, .card .info:before {
+  position:absolute;
+}
+
+// .card {
+//   position:relative;
+//   color: $black;
+//   text-align: center;
+//   margin:5rem auto;
+//   max-width: 33.3333%;
+//   height: auto;
+//   background:transparent;
+//   cursor:pointer;
+//   @extend %HelveticaNeueLTStd-Md;
+// }
+
+.collections h4{
+  @include fontsize(1);
+  text-transform: uppercase;
+  @include kerning(100); 
+  text-align: center;
+  margin-bottom: $fs*2;
+  color: $grey;
+}
+.card {
+  position:relative;
+  color: $black;
+  text-align: center;
+  padding: $fs*4;
+  margin:5rem auto;
+  height: auto;
+  background:transparent;
+  cursor:pointer;
+  @extend %GTHaptikMedium-simple;
+  width: #{gs-width(t, 1, 2) + '%'};
+  margin-right: #{gs-gutter(t, false, false) + '%'};
+  margin-bottom: #{gs-gutter(t, false, false) + '%'};
+  &:nth-of-type(3n + 0) {
+    margin-right: 0;
+  }
+  float: left;
+}
+
+.card img {
+  display: block;
+  position: relative;
+  -webkit-box-shadow: rgba(0,0,0,0.1) 10px 10px 40px;
+  box-shadow: rgba(0,0,0,0.1) 10px 10px 40px;
+  z-index:999;
+  width: 100%;
+  -webkit-animation:flipback2 0s forwards;
+  -moz-animation:   flipback2 0s forwards;
+  -o-animation:     flipback2 0s forwards;
+  animation:        flipback2 0s forwards;
+}
+.card .info {
+  position: absolute;
+  // border: 2px solid $black;
+  bottom:20px;
+  right:20px;
+  width:77%;
+  height: $fs*40.2;
+  padding:20px 20px 20px 20px;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:   border-box;
+  box-sizing:        border-box;
+  background: $white;
+  z-index:555;
+  -webkit-animation:flipfront2 0s forwards;
+  -moz-animation:   flipfront2 0s forwards;
+  -o-animation:     flipfront2 0s forwards;
+  animation:        flipfront2 0s forwards;
+}
+
+.card:hover img {
+  -webkit-animation:flipback1 .5s forwards;
+  -moz-animation:   flipback1 .5s forwards;
+  -o-animation:     flipback1 .5s forwards;
+  animation:        flipback1 .5s forwards;
+  -webkit-box-shadow: rgba(0,0,0,0) 10px 10px 40px;
+  box-shadow: rgba(0,0,0,0) 10px 10px 40px;
+}
+.card:hover .info {
+  -webkit-animation:flipfront1 0.4s forwards;
+  -moz-animation:   flipfront1 0.4s forwards;
+  -o-animation:     flipfront1 0.4s forwards;
+  animation:        flipfront1 0.4s forwards;
+  -webkit-box-shadow: rgba(0,0,0,0.1) 10px 10px 40px;
+  box-shadow: rgba(0,0,0,0.1) 10px 10px 40px;
+}
+.info h3 {
+  @include fontsize(4, 8);
+  // @include kerning(100);
+  padding: 0 0 $fs*2 0;
+}
+
+.info .center{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 75%;
+  @include translate(-50%, -50%);
+}
+
+.info p{
+  @include fontsize(1.4, 2);
+  margin-bottom: $fs*4.5;
+
+}
+
+.info .links li a {
+  width:20%;
+  height:1.8rem;
+  float:left;
+  text-align:center;
+  background:black;
+  color:white;
+  text-decoration:none;
+  line-height:1.8rem;
+}
+.info .links li a:hover {
+  text-decoration:line-through;
+}
+.info .links li:first-child a {
+  margin-right:2%;
+}
+
+/* move card to frontside */
+@-webkit-keyframes flipfront1 {
+  0%, 100% {-webkit-transform:translateX(0px);} 
+  50%      {-webkit-transform:translateX(265px);}
+}
+@-moz-keyframes flipfront1 {
+  0%, 100% {-moz-transform:translateX(0px);} 
+  50%      {-moz-transform:translateX(265px);}
+}
+@-o-keyframes flipfront1 {
+  0%, 100% {-o-transform:translateX(0px);} 
+  50%      {-o-transform:translateX(265px);}
+}
+@keyframes flipfront1 {
+  0%, 100% {transform:translateX(0px);} 
+  50%      {transform:translateX(265px);}
+}
+
+/* move card to backside */
+@-webkit-keyframes flipfront2 {
+  0%, 100% {-webkit-transform:translateX(0px);} 
+  50%      {-webkit-transform:translateX(265px);}
+}
+@-moz-keyframes flipfront2 {
+  0%, 100% {-moz-transform:translateX(0px);} 
+  50%      {-moz-transform:translateX(265px);}
+}
+@-o-keyframes flipfront2 {
+  0%, 100% {-o-transform:translateX(0px);} 
+  50%      {-o-transform:translateX(265px);}
+}
+@keyframes flipfront2 {
+  0%, 100% {transform:translateX(0px);} 
+  50%      {transform:translateX(265px);}
+}
+
+/* move img to backside */
+@-webkit-keyframes flipback1 {
+  0%       {z-index:999;background:rgba(250,250,210,0);}
+  100%     {z-index:111;background:rgba(250,250,210,1);}
+}
+@-moz-keyframes flipback1 {
+  0%       {z-index:999;background:rgba(250,250,210,0);}
+  100%     {z-index:111;background:rgba(250,250,210,1);}
+}
+@-o-keyframes flipback1 {
+  0%       {z-index:999;background:rgba(250,250,210,0);}
+  100%     {z-index:111;background:rgba(250,250,210,1);}
+}
+@keyframes flipback1 {
+  0%       {z-index:999;background:rgba(250,250,210,0);}
+  100%     {z-index:111;background:rgba(250,250,210,1);}
+}
+
+/* move img to frontside */
+@-webkit-keyframes flipback2 {
+  0%       {z-index:111;background:rgba(250,250,210,1);}
+  100%     {z-index:999;background:rgba(250,250,210,0);}
+}
+@-moz-keyframes flipback2 {
+  0%       {z-index:111;background:rgba(250,250,210,1);}
+  100%     {z-index:999;background:rgba(250,250,210,0);}
+}
+@-o-keyframes flipback2 {
+  0%       {z-index:111;background:rgba(250,250,210,1);}
+  100%     {z-index:999;background:rgba(250,250,210,0);}
+}
+@keyframes flipback2 {
+  0%       {z-index:111;background:rgba(250,250,210,1);}
+  100%     {z-index:999;background:rgba(250,250,210,0);}
+}

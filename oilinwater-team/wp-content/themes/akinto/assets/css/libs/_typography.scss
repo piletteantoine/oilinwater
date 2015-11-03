@@ -1,0 +1,64 @@
+// ------------------------------------------------------------
+// Global typography
+// ------------------------------------------------------------
+
+
+// ------------------------------------------------------------
+// Fonts
+// ------------------------------------------------------------
+
+// Filenames
+$GTHaptikRegular: 'GTHaptikRegular';
+$GTHaptikMedium: 'GTHaptikMedium';
+$GTHaptikMedium-simple : 'GTHaptikMedium-simple';
+
+// Font stacks
+%GTHaptikRegular{
+  font-family: $GTHaptikRegular, helvetica, arial, sans-serif;
+}
+%GTHaptikMedium {
+  font-family: $GTHaptikMedium, helvetica, arial, sans-serif;
+}
+%GTHaptikMedium-simple {
+  font-family: $GTHaptikMedium-simple, helvetica, arial, sans-serif;
+}
+
+
+@mixin fontFaceGenerator ($name,$filename,$weight:normal,$style:normal) {
+
+	@font-face {
+		font-family: $name;
+	    src: url('../fonts/#{$filename}.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/#{$filename}.ttf') format('truetype'),
+	         url('../fonts/#{$filename}.woff') format('woff'),
+	         url('../fonts/#{$filename}.svg##{$filename}') format('svg');
+		font-weight: $weight;
+	    font-style: $style;
+	}
+
+	%#{$name}-#{$weight}-#{$style} {
+	    font-family: $name;
+	    font-weight: $weight;
+	    font-style: $style;
+	}
+}
+
+// Generate the font stacks
+@include fontFaceGenerator(GTHaptikRegular, GTHaptikRegular, $weight: normal, $style: normal);
+@include fontFaceGenerator(GTHaptikMedium, GTHaptikMedium, $weight: normal, $style: normal);
+@include fontFaceGenerator(GTHaptikMedium-simple, GTHaptikMedium-simple, $weight: normal, $style: normal);
+
+
+// ------------------------------------------------------------
+// Font sizes
+// ------------------------------------------------------------
+
+%fs-tiny			{ @include fontsize(1.1, 2.5); }
+%fs-small			{ @include fontsize(1.4, 2.1); }
+%fs-medium 			{ @include fontsize(1.5, 2.3); }
+%fs-extra-medium	{ @include fontsize(1.8, 2.8); }
+%fs-large			{ @include fontsize(2.1, 3.0); }
+%fs-extra-large		{ @include fontsize(2.4, 2.9); }
+%fs-huge			{ @include fontsize(3.0, 3.6); }
+%fs-extra-huge		{ @include fontsize(3.4, 4.1); }
+%fs-sum-poster		{ @include fontsize(5.0, 6.0); }

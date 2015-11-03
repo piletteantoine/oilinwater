@@ -1,0 +1,26 @@
+// ------------------------------------------------------------
+// Buttons Styles
+// ------------------------------------------------------------
+
+%btn-base {
+	@extend %browser-ui-reset;
+	background-color: transparent;
+	border: 2px solid $black;
+	letter-spacing: 1px;
+	color: $black;
+	text-decoration: none;
+	@include fontsize(1.2);
+	padding: $fs*0.4 $fs*1.6 $fs*0.4 $fs*1.6;
+	@include transition(all .3s ease);
+	@extend %GTHaptikMedium;
+}
+
+.btn-simple {
+	@extend %btn-base;
+	text-transform: uppercase;
+	&:hover {
+		background-color: $black;
+		border-color: $black;
+		color: $white;
+	}	
+}
