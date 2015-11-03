@@ -1,0 +1,557 @@
+@-moz-document url-prefix()
+{
+    .appear{
+        fill: #004B27!important;
+    }
+}
+
+// GLOBAL SETTINGS 
+// ------------------------------
+
+.brand,
+.foundation{
+	display: block;
+  display: inline-block;
+  text-align: center;
+  .headings.medium{
+    margin: 15px 0 12px 0;
+    margin: $fs*1.5 0 $fs*1.2 0;
+  }
+  &:hover{
+    .headings.medium{
+      color: $brand-color-primary;
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+
+
+  svg{
+    width: 100%;
+    margin: 0 0 40px 0;
+    margin: 0 0 $fs*4 0;
+    @include respond-to(large-screens){
+      margin: 0;
+      margin: 0;
+    }
+    // @include respond-to(nav-breakpoint){
+    //   padding: 0px 50px 0 50px;
+    //   padding: 0 $fs*5 0 $fs*5;
+    // }
+  }
+}
+
+.brand{
+  @include gs-span(L, 1, 1);
+  @include respond-to(medium-screens){
+    @include gs-span(m, all);
+    padding: 50px 0 40px 0;
+    padding: $fs*5 0 $fs*4 0;
+
+    position: relative!important;
+    -webkit-transform: none; /* Safari and Chrome */
+       -moz-transform: none; /* Firefox */
+        -ms-transform: none; /* IE 9 */
+         -o-transform: none; /* Opera */
+            transform: none;
+  }
+  @include centered(45%,0,0,-50%);
+}
+
+.foundation{
+  @include gs-span(L, 2, 2);
+  position: relative!important;
+  @include respond-to(medium-screens){
+    @include gs-span(m, all);
+    -webkit-transform: none; /* Safari and Chrome */
+       -moz-transform: none; /* Firefox */
+        -ms-transform: none; /* IE 9 */
+         -o-transform: none; /* Opera */
+            transform: none;
+    clear: both;
+  }
+  @include respond-to(small-screens){
+    margin-bottom: 40px;
+    margin-bottom: $fs*4;
+  }
+  @include centered(45%,0,0,-50%);
+}
+
+.container {
+	width: 100%;
+	height: auto;
+	box-sizing: border-box;
+	margin: 0 auto;
+	// margin-top: 110px;
+  opacity: 1;
+  margin-top: 100px;
+  margin-top: $fs*10;
+  @include respond-to(large-screens){
+    margin-top: 75px;
+    margin-top: $fs*7.5;
+  }
+  // IPHONE
+  // ------------------------------
+  @include respond-to(small-screens){
+    display: block;
+    position: relative;
+    max-height: 450px;
+    top: 0; 
+    margin-top: 0;
+  }
+
+  // @include centered(45%,50%,-50%,-50%);
+  // @include respond-to(nav-breakpoint){
+  //   position: relative;
+  //   top: 0;
+  //   left: 0;
+  //   margin-top: 75px;
+  //   -webkit-transform: none; /* Safari and Chrome */
+  //      -moz-transform: none; /* Firefox */
+  //       -ms-transform: none; /* IE 9 */
+  //        -o-transform: none; /* Opera */
+  //           transform: none;
+  // }
+}
+
+.push{
+  
+  position: relative;
+	@include transition(all 1s ease-in-out);
+  @include scale(.9);
+		opacity: 0;
+  @include respond-to(nav-breakpoint){
+    -webkit-transform: none; /* Safari and Chrome */
+       -moz-transform: none; /* Firefox */
+        -ms-transform: none; /* IE 9 */
+         -o-transform: none; /* Opera */
+            transform: none;
+  }
+}
+
+
+// JQUERY ADDON
+// ------------------------------
+.on{
+
+	@include transition(all 1s ease-in-out);
+  @include scale(1);
+			opacity: 0;
+  @include respond-to(nav-breakpoint){
+    -webkit-transform: none; /* Safari and Chrome */
+       -moz-transform: none; /* Firefox */
+        -ms-transform: none; /* IE 9 */
+         -o-transform: none; /* Opera */
+            transform: none;
+  }
+}
+
+.on--opacity{
+  opacity: 1;
+}
+
+.none{
+  display: none; 
+}
+.generic_footer{
+  clear: both; 
+}
+
+.container{
+  svg{
+    @include transition(all .6s ease-in-out);
+    width: 42%;
+        margin: 0 auto;
+        display: block;
+    @include respond-to(large-screens){
+      width: 35%;
+    }
+    @include respond-to(nav-breakpoint){
+      width: 90%;
+    }
+  }
+
+}
+
+
+.off--opacity{
+  opacity: 0;
+  @include transition(all .6s ease-in-out);
+}
+
+
+// RECTANGLES ANIMATION 
+// ------------------------------
+
+.rect rect {
+  // In the example below 1s = duration, 2s = delay, 3 = iterations.
+  // -webkit-animation: pulse 2.5s 0s 1 alternate none running;
+  //    -moz-animation: pulse 2.5s 0s 1 alternate none running;
+  //     -ms-animation: pulse 2.5s 0s 1 alternate none running;
+  //         animation: pulse 2.5s 0s 1 alternate none running;
+
+  -webkit-animation-name: pulse;
+  -webkit-animation-duration: 2.5s;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-fill-mode: none;
+  -webkit-animation-play-state: running;
+
+  -moz-animation-name: pulse;
+  -moz-animation-duration: 2.5s;
+  -moz-animation-timing-function: ease-out;
+  -moz-animation-delay: 0s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-direction: alternate;
+  -moz-animation-fill-mode: none;
+  -moz-animation-play-state: running;
+
+  animation-name: pulse;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: none;
+  animation-play-state: running;
+
+  // animation-name
+  // animation-duration
+  // animation-timing-function
+  // animation-delay
+  // animation-iteration-count
+  // animation-direction
+  // animation-fill-mode
+  // animation-play-state
+
+}
+
+.rect2 rect {
+  // -webkit-animation: pulse 2s 0.5s 1 alternate none running;
+  //    -moz-animation: pulse 2s 0.5s 1 alternate none running;
+  //     -ms-animation: pulse 2s 0.5s 1 alternate none running;
+  //         animation: pulse 2s 0.5s 1 alternate none running;
+
+  -webkit-animation-name: pulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-delay: 0.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-fill-mode: none;
+  -webkit-animation-play-state: running;
+
+  -moz-animation-name: pulse;
+  -moz-animation-duration: 2s;
+  -moz-animation-timing-function: ease-out;
+  -moz-animation-delay: 0.5s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-direction: alternate;
+  -moz-animation-fill-mode: none;
+  -moz-animation-play-state: running;
+
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-delay: 0.5s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+.rect3 rect {
+  // -webkit-animation: pulse 1.5s 1s 1 alternate none running;
+  //    -moz-animation: pulse 1.5s 1s 1 alternate none running;
+  //     -ms-animation: pulse 1.5s 1s 1 alternate none running;
+  //         animation: pulse 1.5s 1s 1 alternate none running;
+  -webkit-animation-name: pulse;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-fill-mode: none;
+  -webkit-animation-play-state: running;
+
+  -moz-animation-name: pulse;
+  -moz-animation-duration: 1.5s;
+  -moz-animation-timing-function: ease-out;
+  -moz-animation-delay: 1s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-direction: alternate;
+  -moz-animation-fill-mode: none;
+  -moz-animation-play-state: running;
+
+  animation-name: pulse;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+.rect4 rect {
+  // -webkit-animation: pulse 1s 1.5s 1 alternate none running;
+  //    -moz-animation: pulse 1s 1.5s 1 alternate none running;
+  //     -ms-animation: pulse 1s 1.5s 1 alternate none running;
+  //         animation: pulse 1s 1.5s 1 alternate none running;
+  
+  -webkit-animation-name: pulse;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-delay: 1.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-fill-mode: none;
+  -webkit-animation-play-state: running;
+
+  -moz-animation-name: pulse;
+  -moz-animation-duration: 1s;
+  -moz-animation-timing-function: ease-out;
+  -moz-animation-delay: 1.5s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-direction: alternate;
+  -moz-animation-fill-mode: none;
+  -moz-animation-play-state: running;
+
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 1.5s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+.rect5 rect {
+  // -webkit-animation: pulse 0.5s 2s 1 alternate none running;
+  //    -moz-animation: pulse 0.5s 2s 1 alternate none running;
+  //     -ms-animation: pulse 0.5s 2s 1 alternate none running;
+  //         animation: pulse 0.5s 2s 1 alternate none running;
+  -webkit-animation-name: pulse;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-fill-mode: none;
+  -webkit-animation-play-state: running;
+
+  -moz-animation-name: pulse;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-timing-function: ease-out;
+  -moz-animation-delay: 2s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-direction: alternate;
+  -moz-animation-fill-mode: none;
+  -moz-animation-play-state: running;
+
+  animation-name: pulse;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+
+// OTHER SETTINGS 
+
+.remove{
+
+  -webkit-animation-name: remove;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-fill-mode: none;
+  -webkit-animation-play-state: running;
+
+  -moz-animation-name: remove;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-timing-function: ease-out;
+  -moz-animation-delay: 2s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-direction: alternate;
+  -moz-animation-fill-mode: none;
+  -moz-animation-play-state: running;
+
+  animation-name: remove;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: none;
+  animation-play-state: running;
+
+  // -webkit-animation: remove 0.5s ease-out 2.5s 1 alternate none running;
+  //    -moz-animation: remove 0.5s ease-out 2.5s 1 alternate none running;
+  //     -ms-animation: remove 0.5s ease-out 2.5s 1 alternate none running;
+  //         animation: remove 0.5s ease-out 2.5s 1 alternate none running;
+}
+
+
+.appear{
+
+  -webkit-animation-name: appear;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-delay: 2.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+
+  -moz-animation-name: appear;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-delay: 2.5s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-direction: alternate;
+  -moz-animation-fill-mode: forwards;
+  -moz-animation-play-state: running;
+
+  animation-name: appear;
+  animation-duration: 0.5s;
+  animation-delay: 2.5s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+
+  // -webkit-animation: appear 0.5s ease-out 2.5s 1 alternate forwards running;
+  //    -moz-animation: appear 0.5s ease-out 2.5s 1 alternate forwards running;
+  //     -ms-animation: appear 0.5s ease-out 2.5s 1 alternate forwards running;
+  //         animation: appear 0.5s ease-out 2.5s 1 alternate forwards running;
+}
+
+
+
+// KEYFRAMES 
+// ---------------------------
+
+// PULSE 
+//----------------------------
+@-webkit-keyframes pulse {
+  0% {
+    stroke: #ffffff;
+  }
+  100% {
+    stroke: #004B27;
+  }
+}
+
+@-moz-keyframes pulse {
+  0% {
+    stroke: #ffffff;
+  }
+  100% {
+    stroke: #004B27;
+  }
+}
+
+@-ms-keyframes pulse {
+  0% {
+    stroke: #ffffff;
+  }
+  100% {
+    stroke: #004B27;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    stroke: #ffffff;
+  }
+  100% {
+    stroke: #004B27;
+  }
+}
+
+
+// REMOVE
+//----------------------------
+
+@-webkit-keyframes remove {
+  0% {
+    stroke: #004B27;
+  }
+  100% {
+    stroke: #ffffff;
+  }
+}
+
+@-moz-keyframes remove {
+  0% {
+    stroke: #004B27;
+  }
+  100% {
+    stroke: #ffffff;
+  }
+}
+@-ms-keyframes remove {
+  0% {
+    stroke: #004B27;
+  }
+  100% {
+    stroke: #ffffff;
+  }
+}
+@keyframes remove {
+  0% {
+    stroke: #004B27;
+  }
+  100% {
+    stroke: #ffffff;
+  }
+}
+
+// APPEAR
+//----------------------------
+
+@-webkit-keyframes appear {
+  0% {
+    fill: none;
+  }
+  100% {
+    fill: #004B27;
+  }
+}
+
+@-moz-keyframes appear {
+  0% {
+    fill: none;
+  }
+  100% {
+    fill: #004B27;
+  }
+}
+
+@-ms-keyframes appear {
+  0% {
+    fill: none;
+  }
+  100% {
+    fill: #004B27;
+  }
+}
+
+@keyframes appear {
+  0% {
+    fill: none;
+  }
+  100% {
+    fill: #004B27;
+  }
+}
+
+

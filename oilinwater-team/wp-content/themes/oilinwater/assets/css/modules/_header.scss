@@ -1,0 +1,109 @@
+
+
+	/* Style for our header texts
+	* --------------------------------------- */
+	h1{
+		font-size: 5em;
+		font-family: arial,helvetica;
+		color: #fff;
+		margin:0;
+		padding:0;
+	}
+	.intro p{
+		color: #fff;
+	}
+
+	/* Centered texts in each section
+	* --------------------------------------- */
+	.section{
+		text-align:center;
+	}
+
+	/* Fixed header and footer.
+	* --------------------------------------- */
+	#header, #footer{
+		position:fixed;
+		display:block;
+		width: 100%;
+		// background: #333;
+		z-index:9;
+		text-align:center;
+		color: #f2f2f2;
+		// padding: 20px 0 0 0;
+	}
+
+	#header{
+		top:0px;
+	}
+	// #footer{
+	// 	bottom:0px;
+	// 	right: 0px;
+	// 	width: 35%;
+	// 	@extend %DomaineDisp-Regular;
+	// 	.navigation-menu__list{
+	// 		padding: $fs*4;
+	// 	}
+	// 	.navigation-menu,
+	// 	.navigation-menu__list{
+	// 		background: transparent;
+	// 	}
+	// }
+
+	.fixed{
+		position: fixed;
+		top: none!important;
+		bottom:0px!important;
+		right: 0px!important;
+		width: 35%!important;
+		z-index: 9999999;
+	}
+	.midnightHeader.default {
+		@extend %DomaineDisp-Regular;
+		@include fontsize(3.1);
+	  a{
+		  background: none;
+		  padding: 0 $fs*1;
+		  cursor: pointer;
+		  display: inline-block;
+		  color: black;
+		  text-decoration: none;
+		  list-style: none;
+		  display: inline-block;
+		  @include transition(all .5s ease);
+		  &:hover{
+		  	color: blue; 
+		  }
+		}
+	}
+	.midnightHeader.white {
+			@extend %DomaineDisp-Regular;
+		@include fontsize(3.1);
+	  a{
+		  background: none;
+		  padding: 0 $fs*1;
+		  cursor: pointer;
+		  display: inline-block;
+		  color: white;
+		  text-decoration: none;
+		  list-style: none;
+		  display: inline-block;
+		  @include transition(all .5s ease);
+		  box-shadow: rgba(0,0,0,0.1) 10px 10px 40px;
+		  -webkit-box-shadow: rgba(0,0,0,0.1) 10px 10px 40px;
+		  &:hover{
+		  	color: blue; 
+		  }
+		}
+	}
+
+
+	/* Bottom menu
+	* --------------------------------------- */
+	#infoMenu {
+		bottom: 80px;
+	}
+	#infoMenu li a {
+		color: #fff;
+		z-index: 999;
+	}
+

@@ -216,19 +216,45 @@
 	display: inline-block;
 	text-decoration: none;
 	&:after {
+		@include respond-to(nav-breakpoint){
+			display: none;
+		}
 		content: '';
 		display: block;
 		width: 0;
-		background-color: transparent;
+		height: 2px;
+		background-color: $color;
 		@include transition(all .2s ease);
 	}
 	&:hover {
 		color: $color;
 		&:after {
 			width: 100%;
-			border: 2px solid $black;
-			height: $fs*3;
-			margin-top: $fs*-4.5;
 		}
 	}
+}
+
+// -------------------------------------------------------
+// Centering All Around 
+// -------------------------------------------------------
+
+@mixin centered ($xPos, $yPos, $wPos, $vPos) {
+	position: absolute;
+  	top: $xPos;
+  	left: $yPos;
+  	@include translate($wPos, $vPos);
+}
+
+%centered{
+	@include centered(50%,50%,-50%,-50%);
+}
+
+
+// -------------------------------------------------------
+// BoxShadow
+// -------------------------------------------------------
+@mixin boxshadow($width_a, $width_b, $width_c){
+	-moz-box-shadow: rgba(0,75,39,0.1) $width_a $width_b $width_c;
+    -webkit-box-shadow: rgba(0,75,39,0.1) $width_a $width_b $width_c;
+    box-shadow: rgba(0,75,39,0.1) $width_a $width_b $width_c;
 }

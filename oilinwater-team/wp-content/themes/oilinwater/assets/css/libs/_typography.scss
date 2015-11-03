@@ -2,27 +2,22 @@
 // Global typography
 // ------------------------------------------------------------
 
-
 // ------------------------------------------------------------
 // Fonts
 // ------------------------------------------------------------
 
 // Filenames
-$GTHaptikRegular: 'GTHaptikRegular';
-$GTHaptikMedium: 'GTHaptikMedium';
-$GTHaptikMedium-simple : 'GTHaptikMedium-simple';
+$CircularPro-Book: 'CircularPro-Book';
+$DomaineDisp-Regular: 'DomaineDisp-Regular';
 
 // Font stacks
-%GTHaptikRegular{
-  font-family: $GTHaptikRegular, helvetica, arial, sans-serif;
-}
-%GTHaptikMedium {
-  font-family: $GTHaptikMedium, helvetica, arial, sans-serif;
-}
-%GTHaptikMedium-simple {
-  font-family: $GTHaptikMedium-simple, helvetica, arial, sans-serif;
+%CircularPro-Book {
+  font-family: $CircularPro-Book, helvetica, arial, sans-serif;
 }
 
+%DomaineDisp-Regular {
+  font-family: $DomaineDisp-Regular, helvetica, arial, sans-serif;
+}
 
 @mixin fontFaceGenerator ($name,$filename,$weight:normal,$style:normal) {
 
@@ -44,21 +39,168 @@ $GTHaptikMedium-simple : 'GTHaptikMedium-simple';
 }
 
 // Generate the font stacks
-@include fontFaceGenerator(GTHaptikRegular, GTHaptikRegular, $weight: normal, $style: normal);
-@include fontFaceGenerator(GTHaptikMedium, GTHaptikMedium, $weight: normal, $style: normal);
-@include fontFaceGenerator(GTHaptikMedium-simple, GTHaptikMedium-simple, $weight: normal, $style: normal);
+@include fontFaceGenerator($CircularPro-Book, $CircularPro-Book, $weight: normal, $style: normal);
+@include fontFaceGenerator($DomaineDisp-Regular, $DomaineDisp-Regular, $weight: normal, $style: normal);
 
+
+// Title Settings
+// --------------------------------
+%fs-regular			{ @include fontsize(1.7, 2.5);}
+%fs-x-small			{ @include fontsize(2.7, 3);  }
+%fs-small			{ @include fontsize(2.9, 3.4);  }
+%fs-medium			{ @include fontsize(3,3); }
+%fs-x-big			{ @include fontsize(3.8,3.5); }
+%fs-big				{ @include fontsize(5,5); }
 
 // ------------------------------------------------------------
-// Font sizes
+// HEADINGS
 // ------------------------------------------------------------
 
-%fs-tiny			{ @include fontsize(1.1, 2.5); }
-%fs-small			{ @include fontsize(1.4, 2.1); }
-%fs-medium 			{ @include fontsize(1.5, 2.3); }
-%fs-extra-medium	{ @include fontsize(1.8, 2.8); }
-%fs-large			{ @include fontsize(2.1, 3.0); }
-%fs-extra-large		{ @include fontsize(2.4, 2.9); }
-%fs-huge			{ @include fontsize(3.0, 3.6); }
-%fs-extra-huge		{ @include fontsize(3.4, 4.1); }
-%fs-sum-poster		{ @include fontsize(5.0, 6.0); }
+%before{
+		content:"";
+		height: 2px;
+		width: 100%;
+		background: $brand_color_primary;
+		display: block; 
+		position: absolute;
+    	top: 61px;
+    	top: $fs*6.1;
+    	z-index: $z-under;
+
+	}
+
+%after{
+		content:"";
+		height: 2px;
+		width: 100%;
+		background: $brand_color_primary;
+		display: block; 
+		position: absolute;
+    	bottom: -39px;
+    	bottom: $fs*-3.9;
+    	z-index: $z-under;
+
+	}
+
+.headline{
+	width: 100%;
+	position: relative;
+	margin: 30px 0 0 0;
+	margin: $fs*3 0 0 0;
+	padding: 20px 0 40px 0;
+	padding: $fs*2 0 $fs*4 0;
+	@include respond-to(medium-screens){
+		div:first-of-type{
+			display: none;
+		}
+		div:before{
+			display: none;
+		}
+	}
+
+	&:before{
+		content:"";
+		height: 2px;
+		width: 100%;
+		background: $brand_color_primary;
+		display: block; 
+		position: absolute;
+    	top: 61px;
+    	top: $fs*6.1;
+    	z-index: $z-under;
+    	@include respond-to(medium-screens){
+			display: none;
+    	}
+
+	}
+	&:after{
+		content:"";
+		height: 2px;
+		width: 100%;
+		background: $brand_color_primary;
+		display: block; 
+		position: absolute;
+		bottom: 0;
+    	z-index: $z-under;
+
+	}
+	h3{
+		padding: $fs*3 0 $fs*3 0;
+		padding: 30px 0 30px 0;
+	}
+}
+
+.headings.x-small{
+	@extend %fs-x-small;
+	color: $brand_color_primary;
+	text-align: left;
+	text-transform: uppercase;
+	@include kerning(50);
+	@include respond-to(medium-screens){
+		@include fontsize(2.5);
+	}
+	@include respond-to(small-screens){
+		@include fontsize(2);
+	}
+}
+.headings.small{
+	@extend %fs-small;
+	color: $brand_color_primary;
+	text-align: left;
+	text-transform: uppercase;
+	@include kerning(90);
+	@include respond-to(medium-screens){
+		@include fontsize(2.5);
+	}
+	@include respond-to(small-screens){
+		@include fontsize(2);
+	}
+}
+
+.headings.medium{
+	@extend %fs-medium;
+	@include link-interaction($brand_color_primary);
+	color: $brand_color_primary;
+	text-align: center;
+	margin: 0 auto;
+	@include kerning(9);
+	@include respond-to(medium-screens){
+		@include fontsize(2.5,2.5);
+	}
+	@include respond-to(small-screens){
+		@include fontsize(2.4);
+	}
+}
+
+.headings.big{
+	@extend %fs-big;
+    text-align: center;
+	color: $brand_color_primary;
+	text-align: center;
+	@include kerning(10);
+	@include respond-to(medium-screens){
+		@include fontsize(3);
+	}
+	@include respond-to(small-screens){
+		@include fontsize(2.4);
+	}
+}
+
+.headings.x-big{
+	@extend %fs-x-big;
+	color: $brand_color_primary;
+	text-align: left;
+	text-transform: uppercase;
+	@include kerning(50);
+	padding-bottom: 20px;
+	font-weight: 800;
+	padding-bottom: $fs*1;
+	margin-bottom: $fs*3;
+	border-bottom: 3px solid $brand_color_primary;
+	@include respond-to(medium-screens){
+		@include fontsize(3);
+	}
+	@include respond-to(small-screens){
+		@include fontsize(2.4);
+	}
+}

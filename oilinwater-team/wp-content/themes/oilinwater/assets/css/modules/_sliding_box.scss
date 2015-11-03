@@ -1,0 +1,14 @@
+.fp-tableCell{
+	position: relative!important;
+}
+
+.intro{
+	@extend %centered;
+}
+
+.fp-tableCell{
+	img{
+		// height: 100%;
+		width: 100%;
+	}
+}

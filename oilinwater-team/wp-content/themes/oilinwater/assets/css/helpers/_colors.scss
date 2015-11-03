@@ -6,9 +6,9 @@
  * Greys (dark to light) */
 
 $dark_black				: #000000;
-$black					: #2A2A3C;
+$black					: #222222;
 
-$grey					: #b2b2b2;
+$grey					: #4d4d4d;
 $dark_grey				: #808080;
 $light_grey				: #f6f6f6;
 $hot_grey				: #bfbfbf; 
@@ -19,9 +19,11 @@ $white					: #ffffff;
 /*
  * Main brand colors */
 
+$dewar-green			: #121212;
 $ruhr-red				: #ed1d24;
 $ruhr-grey				: #d2d2cd;
 $ruhr-alternative-grey	: #a8a59e;
+$gradient-grey			: #333333;
 
 /*
  * UI colors */
@@ -38,6 +40,15 @@ $blue					: #9ec5dd; // deprecated
 $text_color				: $black;
 $light_text				: $info_grey;
 
-$brand_color_primary	: $ruhr-red;
+$brand_color_primary	: $dewar-green;
 $brand_color_secondary	: $ruhr-grey;
 $brand_color_tertiary	: $ruhr-alternative-grey;
+
+.white{
+	color: $white!important;
+}
+.black{
+	color: $white!important;
+}
+
+
