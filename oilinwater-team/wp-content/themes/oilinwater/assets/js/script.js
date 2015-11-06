@@ -71,6 +71,14 @@ var _window = $(window),
 
 	})();
 
+//--------------------------------
+// CLASS SELECTOR
+//--------------------------------
+
+if ($('#navigation a').hasClass('active')) {
+    $(this).parent().addClass('active');
+}
+
 
 // --------------------------------
 // ADD Class Active on Menu

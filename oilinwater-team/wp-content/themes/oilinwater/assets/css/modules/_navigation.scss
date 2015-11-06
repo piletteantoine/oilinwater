@@ -38,7 +38,7 @@
 }
 
 
-.navigation-menu__list {
+.menu {
 	list-style-type:none;
 	display: block;
 	margin:0 auto;
@@ -58,7 +58,7 @@
 }
 
 /*Horizontal button creation*/
-.navigation-menu__list li {
+.menu li {
 	display:inline-block;
 	margin-right: 1px;
 	@include respond-to(nav-breakpoint){
@@ -68,7 +68,7 @@
 }
 
 /*Style for menu links*/
-.navigation-menu__list li a {
+.menu li a {
 	display:inline-block;
 	padding: 24px 30px;
 	padding: $fs*2.4 $fs*3;
@@ -91,7 +91,7 @@
 	@include link-interaction(blue);
 }
 
-.navigation-menu__list .active {
+.menu .active {
 	color: $text_color;
 	cursor: default;
 	&:hover::after {
@@ -99,30 +99,30 @@
 	}
 }
 
-// .navigation-menu__list li a:hover{
+// .menu li a:hover{
 // 	background-color: $info_grey;
 // }
 
 /*Hide dropdown links until they are needed*/
-.navigation-menu__list li ul {
+.menu li ul {
 	display: none;
 }
 
 /*Make dropdown links vertical*/
-.navigation-menu__list li ul li {
+.menu li ul li {
 	display: block;
 	float: none;
 }
 
 /*Prevent text wrapping*/
-.navigation-menu__list li ul li a {
+.menu li ul li a {
 	width: auto;
 	min-width: 100px;
 	padding: 0 20px;
 }
 
 /*Display the dropdown on hover*/
-.navigation-menu__list ul li a:hover + .hidden, .hidden:hover {
+.menu ul li a:hover + .hidden, .hidden:hover {
 	display: block;
 }
 
@@ -139,7 +139,7 @@
 	}
 }
 
-.navigation-menu .navigation-menu__list{
+.navigation-menu .menu{
 	@include respond-to(nav-breakpoint){
 		position: relative;
 	}
@@ -206,7 +206,7 @@
 	}
 }
 
-.sub-navigation-menu__list {
+.sub-menu {
 	white-space: nowrap;
 	overflow-x: scroll;
 	@include respond-to(small-screens) {
@@ -230,15 +230,15 @@
 	}
 }
 
-.sub-navigation-menu__list::-webkit-scrollbar {
+.sub-menu::-webkit-scrollbar {
 	display: none;
 }
 
-.sub-navigation-menu__list li {
+.sub-menu li {
 	display: inline-block;
 }
 
-.sub-navigation-menu__list a {
+.sub-menu a {
 	padding: $fs*1.6 $fs;
 	display: inline-block;
 	color: $brand_color_primary;
@@ -251,11 +251,11 @@
 	}
 }
 
-.sub-navigation-menu__list li:first-child a {
+.sub-menu li:first-child a {
 	padding-left: 0;
 }
 
-.sub-navigation-menu__list .active {
+.sub-menu .active {
 	color: $text_color;
 	cursor: default;
 }
